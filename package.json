@@ -3,6 +3,9 @@
   "version": "0.8.0",
   "description": "A CLI utility that lets you pass env-vars to CLI tools on windows, Mac and linux alike.",
   "main": "lib",
+  "bin" : {
+    "env-pass" : "bin/cli"
+  },
   "scripts": {
     "test": "mocha",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
