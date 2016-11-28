@@ -1,0 +1,30 @@
+{
+  "name": "env-pass",
+  "version": "0.8.0",
+  "description": "A CLI utility that lets you pass env-vars to CLI tools on windows, Mac and linux alike.",
+  "main": "lib",
+  "scripts": {
+    "test": "mocha",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+    "cover-enforce": "istanbul check-coverage --function 90 --lines 85 --branches 75"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.mobimate.local/worldmate/node-env-params"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osher/node-env-params/issues"
+  },
+  "homepage": "https://github.com/osher/node-env-params#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul": "*",
+    "minimist": "^1.2.0",
+    "mocha": "~2.3.4",
+    "mocha-ui-exports": "^1.0.1"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.com/"
+  }
+}
