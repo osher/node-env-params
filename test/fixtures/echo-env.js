@@ -1,9 +1,11 @@
-const argv = require('minimist').parse(process.argv.slice(2));
+const args = require('minimist')(process.argv.slice(2));
 
-if (!Array.isArray(argv.env)) argv.env = [ argv.env ];
+if (!args.echo) args.echo = [];
+if (!Array.isArray(args.echo)) args.echo = [ args.echo ];
 
-argv.env.forEach(console.log);
+args.echo.forEach((name) => console.log( name + ":" + process.env[name] ));
 
-if (argv.stayup) setInterval( () => console.log('blip'), 60000);
-
-process.on('message', (m) => { if (m == argv.kill) process.exit() });
+if (!args.killMsg) return;
+  
+setInterval( () => console.log('blip'), 60000);
+process.on('message', (m) => { console.log(m, args.killMsg); if (m == args.killMsg) process.exit() });
