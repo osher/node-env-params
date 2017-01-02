@@ -1,3 +1,10 @@
+# Work In Progress... 
+
+I just expressed the idea in code, I did not test it, and will have time for it in few weeks time.
+ - need to add tests and publish to npm
+ - need to connect to travis
+ - need to connect to a builder with windows platform
+
 # env-pass
 
 A CLI utility that lets you pass env-params to CLI tools on windows, Mac and 
