@@ -66,10 +66,30 @@ module.exports =
       , "should not fail" : () => Should.not.exist(result.err)
       , "should emit to stderror a missing-target" : () => result.stderr[0].should.eql("Cannot find target: --echo")
       }
+    , "when called with a --timeout switch" : 
+      { beforeAll: 
+        done => {
+          const start = Date.now()
+          exec(
+            "ENV1=gip-gip --timeout 1 ENV2=w'ever test/fixtures/echo-env --killMsg who-cares"
+          , result = {}
+          , function(e) {
+                result.due = Date.now() - start
+                done(e)
+            }
+          )
+        }
+      , "should not fail" : () => Should.not.exist(result.err)
+      , "should terminate by the given timeout" : 
+          () => Should(result.due).be.greaterThan(1000).lessThan(2000)
+      , "should emit a timeout notice on stderr" : 
+          () => Should(result.stderr)
+                  .eql(['env-pass: timeout of 1000 reached'])
+      }
     }
   , "~internal" : 
-    { ".parse(argv)" : null
-    , ".exec(task, process, done)" : null
+    { ".parse(process)" : null
+    , ".exec(task, process, console, done)" : null
     }
   }
 };

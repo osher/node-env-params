@@ -1,7 +1,8 @@
 env-pass
 ================
 
-no versions are published yet.
+## 0.6.1
+ - handle -t/--timeout switches - expects timeout in seconds
 
 ## 0.6.0
  - Initial release
