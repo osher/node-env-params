@@ -36,6 +36,36 @@ module.exports =
       , "should not fail" : () => Should.not.exist(result.err)
       , "should pass kill signal" : () => Should(result.stdout).not.containEql("timeout")
       }
+    , "when called with no arguments" : {
+        beforeAll: 
+          done => exec(
+          ""
+        , result = {}
+        , done
+        )
+      , "should not fail" : () => Should.not.exist(result.err)
+      , "should emit the help" : ()=> Should(result.stdout.join("")).match(/example:/)
+      }
+    , "when called with only arguments" : {
+        beforeAll: 
+          done => exec(
+          "ENV=value"
+        , result = {}
+        , done
+        )
+      , "should not fail" : () => Should.not.exist(result.err)
+      , "should emit the help" : ()=> Should(result.stdout.join("")).match(/example:/)
+      }
+    , "when called with env vars and switches but no identifialble target" : 
+      { beforeAll: 
+        done => exec(
+          "ENV1=gip-gip ENV2=urraaaa! --echo ENV1 --echo ENV2 foo"
+        , result = {}
+        , done
+        )
+      , "should not fail" : () => Should.not.exist(result.err)
+      , "should emit to stderror a missing-target" : () => result.stderr[0].should.eql("Cannot find target: --echo")
+      }
     }
   , "~internal" : 
     { ".parse(argv)" : null
@@ -45,7 +75,7 @@ module.exports =
 };
 
 function exec(cmd, result, done) {
-    childProcess.exec( "node bin/cli.js " + cmd
+    childProcess.exec( "node bin/cli " + cmd
     , (err, stdout, stderr) => {
           if (err) return done(err);
           Object.assign(result, {

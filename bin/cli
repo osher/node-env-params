@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /* 
   usage:
     env-pass ENV_VAR1=3001 ENV_VARn=foo bin/my-svc --switch1 --switch2 --switch3 value verb1 --switch4 verb2
