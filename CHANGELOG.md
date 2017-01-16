@@ -3,7 +3,7 @@ env-pass
 
 no versions are published yet.
 
-## Staged
- - Initial commit
+## 0.6.0
+ - Initial release
 
 
