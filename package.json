@@ -1,6 +1,6 @@
 {
   "name": "env-pass",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A CLI utility that lets you pass env-vars to CLI tools on windows, Mac and linux alike.",
   "main": "lib",
   "bin": {
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://git.mobimate.local/worldmate/node-env-params"
+    "url": "https://github.com/osher/node-env-pass"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/osher/node-env-params/issues"
+    "url": "https://github.com/osher/node-env-pass/issues"
   },
-  "homepage": "https://github.com/osher/node-env-params#readme",
+  "homepage": "https://github.com/osher/node-env-pass#readme",
   "dependencies": {},
   "devDependencies": {
     "istanbul": "*",
