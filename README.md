@@ -1,4 +1,4 @@
-# env-pass
+# env-pass [![Build Status](https://secure.travis-ci.org/osher/node-env-pass.png?branch=master)](http://travis-ci.org/osher/node-env-pass)
 
 A CLI utility that lets you pass env-params to CLI tools on windows, Mac and 
 linux alike.
