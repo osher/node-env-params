@@ -1,6 +1,7 @@
 test
 coverage
 .node-version
+.travis.yml
 .gitignore
 .npmignore
 .hgignore

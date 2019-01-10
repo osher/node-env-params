@@ -1,6 +1,6 @@
 {
   "name": "env-pass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI utility that lets you pass env-vars to CLI tools on windows, Mac and linux alike.",
   "main": "lib",
   "bin": {

@@ -1,5 +1,8 @@
 env-pass
 ================
+## 1.0.1
+ - cleaner pack (without the `.travis.yml`... :P)
+
 ## 1.0.0
  - when a script is not found in cwd - fallback to look in ~{cwd}/node_modules/.bin (like npx does)
  - dev dependencies: bump mocha, add coveralls
