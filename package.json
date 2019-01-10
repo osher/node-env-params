@@ -1,6 +1,6 @@
 {
   "name": "env-pass",
-  "version": "0.6.2",
+  "version": "1.0.0",
   "description": "A CLI utility that lets you pass env-vars to CLI tools on windows, Mac and linux alike.",
   "main": "lib",
   "bin": {
@@ -22,7 +22,7 @@
   "devDependencies": {
     "istanbul": "*",
     "minimist": "^1.2.0",
-    "mocha": "~2.3.4",
+    "mocha": "^5.2.0",
     "mocha-ui-exports": "^1.0.1",
     "should": "^11.1.2"
   },

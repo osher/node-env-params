@@ -23,8 +23,24 @@ module.exports =
           , "ENV2:urraaaa!"
           ]
         )
-      },
-      "when called in IPC mode" : 
+      }
+    , "when called with env vars and a CLI tool from node_modules/.bin" :
+      { timeout: "5s",
+        beforeAll: 
+        done => exec(
+          "ENV1=gip-gip ENV2=urraaaa! istanbul cover --no-default-excludes --print none test/fixtures/echo-env.js -- baz --echo ENV1 --echo ENV2 foo"
+        , result = {}
+        , done
+        )
+      , "should not fail" : () => Should.not.exist(result.err)
+      , "should pass the env vars to the target script" :
+        () => Should(result.stdout).eql(
+          [ "ENV1:gip-gip"
+          , "ENV2:urraaaa!"
+          ]
+        )
+      }
+    , "when called in IPC mode" : 
       { timeout: "5s"
       , beforeAll: 
         done => execIpc(
@@ -64,7 +80,7 @@ module.exports =
         , done
         )
       , "should not fail" : () => Should.not.exist(result.err)
-      , "should emit to stderror a missing-target" : () => result.stderr[0].should.eql("Cannot find target: --echo")
+      , "should emit to stderror a missing-target" : () => result.stderr[0].should.eql("Cannot open target: --echo")
       }
     , "when called with a --timeout switch" : 
       { beforeAll: 
