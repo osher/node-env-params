@@ -87,7 +87,7 @@ module.exports =
         done => {
           const start = Date.now()
           exec(
-            "ENV1=gip-gip --timeout 1 ENV2=w'ever test/fixtures/echo-env --killMsg who-cares"
+            "ENV1=gip-gip --timeout 1 ENV2=\"w'ever\" test/fixtures/echo-env --killMsg who-cares"
           , result = {}
           , function(e) {
                 result.due = Date.now() - start
